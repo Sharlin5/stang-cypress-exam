@@ -61,7 +61,18 @@ Cypress.Commands.add('auth', (userType) => {
       }
     })
   })
-  
+
+  Cypress.Commands.add('register', (registrationData) => {
+    // Fill registration form
+    cy.get('#username').type(registrationData.username)
+    cy.get('#email').type(registrationData.email)
+    cy.get('#password').type(registrationData.password)
+    cy.get('#confirmPassword').type(registrationData.confirmPassword)
+
+    // Select role using the roleId from the generated data
+    cy.get('#' + registrationData.roleId).check()
+  })
+
   Cypress.Commands.add('loginAsQuizMaster', () => {
     cy.auth('quizMaster')
   })

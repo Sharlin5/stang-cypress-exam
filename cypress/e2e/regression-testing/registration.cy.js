@@ -16,15 +16,8 @@ describe('Sprint 1 - Registration for Quiz Master & Regular Users', { testIsolat
 
         cy.log('Registering as ' + (registrationData.role === 'quiz_master' ? 'Quiz Master' : 'Regular User'))
 
-        // Fill registration form
-        cy.get('#username').type(registrationData.username)
-        cy.get('#email').type(registrationData.email)
-        cy.get('#password').type(registrationData.password)
-        cy.get('#confirmPassword').type(registrationData.confirmPassword)
-
-        // Select role using the roleId from the generated data
-        cy.get('#' + registrationData.roleId).check()
-
+        cy.register(registrationData)
+        
         // Submit form
         cy.contains('Register').should('be.visible').click()
         cy.wait(2000)

@@ -41,11 +41,7 @@ npx cypress open
 - Select *E2E Testing*
 - Click *Continue*
 - Inside the project **stang-cypress-exam** add *e2e* folder inside the cypress folder or add new spec file via the Cypress User Interface.
-### 5. Install Cypress Reporter
-```bash
-npm install --save-dev cypress-mochawesome-reporter
-```
-### 6. Install and Setup Faker
+### 5. Install and Setup Faker
 ```bash
 npm install @faker-js/faker --save-dev
 ```
@@ -59,6 +55,8 @@ import { faker } from '@faker-js/faker';
 ```bash
 npx cypress open
 ```
+- select e2e testing
+- select registration.cy.js to check the cypress test for registration
 ### 2. Headless Mode
 **Set up**
 Add projectId: "96srdf" in cypress config and "registration-test": "npx cypress run --record --key c6cea708-0bee-4c1e-8599-3cae4d43cb1e --spec 'cypress/e2e/regression-testing/registration.cy.js' --browser chrome" in package.json
