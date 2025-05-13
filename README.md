@@ -49,6 +49,16 @@ npm install @faker-js/faker --save-dev
 ```js
 import { faker } from '@faker-js/faker';
 ```
+This is used in **fakerUtils.js** to create test data.
+
+## Spec File
+### registration.cy.js
+- Contains the following tests:
+- Makes use of test isolation false
+    - Verify quiz master or user can register
+    - Verify Registered user can login
+- Test sad path/non-deterministic
+    - Verify cannot register with blank inputs
 
 ## Run in Headed and Headless mode
 ### 1. Headed Mode
