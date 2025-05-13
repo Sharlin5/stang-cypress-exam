@@ -62,6 +62,12 @@ Cypress.Commands.add('auth', (userType) => {
     })
   })
 
+  Cypress.Commands.add('login', (registrationData) => {
+    cy.get('[data-testid="input-username"]').type(registrationData.username)
+    cy.get('[data-testid="input-password"]').type(registrationData.password)
+    cy.get('[data-testid="login-button"]').click()
+  })
+
   Cypress.Commands.add('register', (registrationData) => {
     // Fill registration form
     cy.get('#username').type(registrationData.username)

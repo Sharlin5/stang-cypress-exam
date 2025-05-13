@@ -27,9 +27,7 @@ describe('Sprint 1 - Registration for Quiz Master & Regular Users', { testIsolat
     it('Verify newly created account can successfully log in and access appropriate URL', () => {
         // Login with the registration data from the previous test
         cy.log('Logging in as ' + registrationData.username)
-        cy.get('[data-testid="input-username"]').type(registrationData.username)
-        cy.get('[data-testid="input-password"]').type(registrationData.password)
-        cy.get('[data-testid="login-button"]').click()
+        cy.login(registrationData)
 
         cy.wait(2000)
         // Verify successful login
